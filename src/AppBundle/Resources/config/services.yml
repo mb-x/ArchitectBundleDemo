@@ -1,0 +1,14 @@
+services:
+    appbundle.category_manager:
+        class: AppBundle\Manager\CategoryManager
+        parent: mbx.abstract_entity_manager
+    appbundle.category_form_handler:
+        class: AppBundle\FormHandler\CategoryFormHandler
+        parent: mbx.abstract_form_handler
+        arguments: ['@appbundle.category_manager']
+        scope: request
+
+
+#    user_admin.example:
+#        class: UserAdminBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
