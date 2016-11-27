@@ -22,9 +22,7 @@ class CategoryController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $categories = $em->getRepository('AppBundle:Category')->findAll();
+        $categories = $this->get('appbundle.category_manager')->getRepository()->findAll();
 
         return $this->render('category/index.html.twig', array(
             'categories' => $categories,
@@ -40,20 +38,15 @@ class CategoryController extends Controller
     public function newAction(Request $request)
     {
         $category = new Category();
-        $form = $this->createForm('AppBundle\Form\CategoryType', $category);
-        $form->handleRequest($request);
+        $formHandler = $this->get('appbundle.category_form_handler');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($category);
-            $em->flush($category);
-
+        if ($formHandler->processForm($category)) {
             return $this->redirectToRoute('category_show', array('id' => $category->getId()));
         }
 
         return $this->render('category/new.html.twig', array(
             'category' => $category,
-            'form' => $form->createView(),
+            'form' => $formHandler->getForm()->createView(),
         ));
     }
 
@@ -65,11 +58,10 @@ class CategoryController extends Controller
      */
     public function showAction(Category $category)
     {
-        $deleteForm = $this->createDeleteForm($category);
-
+        $formHandler = $this->get('appbundle.category_form_handler');
         return $this->render('category/show.html.twig', array(
             'category' => $category,
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $formHandler->createDeleteForm($category)->createView(),
         ));
     }
 
@@ -81,20 +73,16 @@ class CategoryController extends Controller
      */
     public function editAction(Request $request, Category $category)
     {
-        $deleteForm = $this->createDeleteForm($category);
-        $editForm = $this->createForm('AppBundle\Form\CategoryType', $category);
-        $editForm->handleRequest($request);
+        $formHandler = $this->get('appbundle.category_form_handler');
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
+        if ($formHandler->processForm($category)) {
             return $this->redirectToRoute('category_edit', array('id' => $category->getId()));
         }
 
         return $this->render('category/edit.html.twig', array(
             'category' => $category,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'edit_form' => $formHandler->getForm()->createView(),
+            'delete_form' => $formHandler->createDeleteForm($category)->createView(),
         ));
     }
 
@@ -106,31 +94,13 @@ class CategoryController extends Controller
      */
     public function deleteAction(Request $request, Category $category)
     {
-        $form = $this->createDeleteForm($category);
-        $form->handleRequest($request);
+        $formHandler = $this->get('appbundle.category_form_handler');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($category);
-            $em->flush($category);
+        if ($formHandler->processDeleteForm($category)) {
+            // $this->get('session')->getFlashBag()->add('Deleted Successfully');
         }
 
         return $this->redirectToRoute('category_index');
     }
 
-    /**
-     * Creates a form to delete a category entity.
-     *
-     * @param Category $category The category entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Category $category)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('category_delete', array('id' => $category->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
 }
