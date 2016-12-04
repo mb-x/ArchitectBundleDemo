@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a48ef410a5fdbcdd330c812cac5e761",
-    "content-hash": "6819125ec306bbe1a861d164d179a77a",
+    "hash": "14fda3bf017759eb5f485d91cac53cb8",
+    "content-hash": "a46b8dcf4638e5c43c5ba0b34157a170",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -920,16 +920,16 @@
         },
         {
             "name": "mb-x/architect-bundle",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mb-x/architect-bundle.git",
-                "reference": "c5765188d6169aa783f7d624991e8a8d672df882"
+                "reference": "4397d53055bf45718e9b998c119d25865606336f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/c5765188d6169aa783f7d624991e8a8d672df882",
-                "reference": "c5765188d6169aa783f7d624991e8a8d672df882",
+                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/4397d53055bf45718e9b998c119d25865606336f",
+                "reference": "4397d53055bf45718e9b998c119d25865606336f",
                 "shasum": ""
             },
             "require": {
@@ -962,7 +962,7 @@
             "keywords": [
                 "utils"
             ],
-            "time": "2016-11-22 13:17:12"
+            "time": "2016-11-27 22:04:33"
         },
         {
             "name": "monolog/monolog",
@@ -2287,9 +2287,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mb-x/architect-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
