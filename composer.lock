@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "14fda3bf017759eb5f485d91cac53cb8",
-    "content-hash": "a46b8dcf4638e5c43c5ba0b34157a170",
+    "hash": "ee03d2d124e68fb0dda08b93bbf9fa96",
+    "content-hash": "14da95e05a7b1dcd63e1fbe7d8f75311",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -920,21 +920,21 @@
         },
         {
             "name": "mb-x/architect-bundle",
-            "version": "v0.1",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mb-x/architect-bundle.git",
-                "reference": "4397d53055bf45718e9b998c119d25865606336f"
+                "reference": "29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/4397d53055bf45718e9b998c119d25865606336f",
-                "reference": "4397d53055bf45718e9b998c119d25865606336f",
+                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63",
+                "reference": "29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63",
                 "shasum": ""
             },
             "require": {
                 "doctrine/doctrine-bundle": "*",
-                "php": ">=5.3.9",
+                "php": ">=5.4.0",
                 "symfony/framework-bundle": ">=2.7",
                 "twig/twig": "*"
             },
@@ -957,12 +957,17 @@
                     "email": "mbengrich.dev@gmail.com"
                 }
             ],
-            "description": "Symfony MbxArchitectBundle",
+            "description": "This Bundle provides an architecture to separate the different job layers in your Symfony application.",
             "homepage": "https://github.com/mb-x/architect-bundle",
             "keywords": [
+                "Form handler",
+                "Symfony2",
+                "design pattern",
+                "manager",
+                "symfony3",
                 "utils"
             ],
-            "time": "2016-11-27 22:04:33"
+            "time": "2016-12-04 17:56:26"
         },
         {
             "name": "monolog/monolog",

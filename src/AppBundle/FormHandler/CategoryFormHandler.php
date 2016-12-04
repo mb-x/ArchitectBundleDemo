@@ -9,32 +9,69 @@ use AppBundle\Form\CategoryType;
  */
 class CategoryFormHandler extends AbstractFormHandler
 {
+
+    /**
+     * Returns the route name of delete action
+     *
+     * @return string
+     */
     public function initDeleteRouteName()
     {
        return 'category_delete';
     }
-
+    /**
+     * Returns the FormType's namespace of the managed entity
+     *
+     * @return string
+     */
     public function initFormTypeNS()
     {
         return CategoryType::class;
     }
+    /**
+     * Code to execute before checking if form is submitted and valid
+     *
+     * @param \Mbx\ArchitectBundle\Interfaces\EntityInterface $entity
+     * @return array
+     */
     public function beforeCheckForm(EntityInterface $entity)
     {
         // TODO: Implement beforeCheckForm() method.
+        return array();
     }
-
-    public function afterCheckForm(EntityInterface $entity)
+    /**
+     * Code to execute after checking if form is submitted and valid
+     *
+     * @param \Mbx\ArchitectBundle\Interfaces\EntityInterface $entity
+     * @param array $extraVars
+     * @return mixed
+     */
+    public function afterCheckForm(EntityInterface $entity, $extraVars = array())
     {
         // TODO: Implement afterCheckForm() method.
+        // extract($extraVars);
     }
-
+    /**
+     * Code to execute before checking if delete form is submitted and valid
+     *
+     * @param \Mbx\ArchitectBundle\Interfaces\EntityInterface $entity
+     * @return mixed
+     */
     public function beforeCheckDeleteForm(EntityInterface $entity)
     {
         // TODO: Implement beforeCheckDeleteForm() method.
+        return array();
     }
-
-    public function afterCheckDeleteForm(EntityInterface $entity)
+    /**
+     * Code to execute after checking if delete form is submitted and valid
+     *
+     * @param \Mbx\ArchitectBundle\Interfaces\EntityInterface $entity
+     * @param array $extraVars
+     * @return mixed
+     */
+    public function afterCheckDeleteForm(EntityInterface $entity, $extraVars = array())
     {
         // TODO: Implement afterCheckDeleteForm() method.
+        // extract($extraVars);
     }
 }
