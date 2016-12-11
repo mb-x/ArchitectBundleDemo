@@ -6,7 +6,6 @@ services:
         class: AppBundle\FormHandler\CategoryFormHandler
         parent: mbx.abstract_form_handler
         arguments: ['@appbundle.category_manager']
-        scope: request
     appbundle.post_manager:
         class: AppBundle\Manager\PostManager
         parent: mbx.abstract_entity_manager
@@ -14,7 +13,6 @@ services:
         class: AppBundle\FormHandler\PostFormHandler
         parent: mbx.abstract_form_handler
         arguments: ['@appbundle.post_manager']
-        scope: request
 
 
 #    user_admin.example:

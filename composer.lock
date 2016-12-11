@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ee03d2d124e68fb0dda08b93bbf9fa96",
-    "content-hash": "14da95e05a7b1dcd63e1fbe7d8f75311",
+    "hash": "d839d93151fdb0f916d5007359dafbee",
+    "content-hash": "56f47fe699074dabf1cde2bb49e45f3a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -920,16 +920,16 @@
         },
         {
             "name": "mb-x/architect-bundle",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mb-x/architect-bundle.git",
-                "reference": "29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63"
+                "reference": "5bdcd0af2df110c77cdd4dd28abd540064eacbda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63",
-                "reference": "29ccc5b7c3c022cd73b9c3adbf2310e9f2f9af63",
+                "url": "https://api.github.com/repos/mb-x/architect-bundle/zipball/5bdcd0af2df110c77cdd4dd28abd540064eacbda",
+                "reference": "5bdcd0af2df110c77cdd4dd28abd540064eacbda",
                 "shasum": ""
             },
             "require": {
@@ -967,7 +967,7 @@
                 "symfony3",
                 "utils"
             ],
-            "time": "2016-12-04 17:56:26"
+            "time": "2016-12-11 17:24:16"
         },
         {
             "name": "monolog/monolog",
